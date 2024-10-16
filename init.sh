@@ -2,7 +2,7 @@
 
 THIS_SCRIPT_PATH=$(cd "$(dirname "$0")" && pwd)
 cd THIS_SCRIPT_PATH
-
+export PYTHON=python3
 
 if [ -f "requirements.txt" ]; then
     python3 -m pip install -r requirements.txt
