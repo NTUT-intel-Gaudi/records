@@ -6,11 +6,17 @@ if [ "$PYTHON_VERSION" != "$REQUIRED_VERSION" ]; then
     exit 1
 fi
 
+# install libs incase required for some python packages
+apt update
+apt install python3-dev libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev
+
 git clone https://github.com/huggingface/optimum-habana
 cd optimum-habana && git checkout v1.13.2
 pip install git+https://github.com/HabanaAI/DeepSpeed.git@1.17.0
 
+cd examples/text-generation
 pip install -r requirements.txt
+pip install -r requirements_lm_eval.txt
 
 # for Single and multiple prompts
 python run_generation.py \
