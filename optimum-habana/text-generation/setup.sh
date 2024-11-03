@@ -18,13 +18,3 @@ pip install git+https://github.com/HabanaAI/DeepSpeed.git@1.17.0
 cd examples/text-generation
 pip install -r requirements.txt
 pip install -r requirements_lm_eval.txt
-
-# for Single and multiple prompts
-python run_generation.py \
---model_name_or_path meta-llama/Llama-3-70b-hf \
---use_hpu_graphs \
---use_kv_cache \
---max_new_tokens 100 \
---do_sample \
---batch_size 2 \
---prompt "Hello world" "How are you?"
