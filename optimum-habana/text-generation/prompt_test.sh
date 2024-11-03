@@ -12,6 +12,7 @@ apt install python3-dev libavformat-dev libavcodec-dev libavdevice-dev libavutil
 
 git clone https://github.com/huggingface/optimum-habana
 cd optimum-habana && git checkout v1.13.2
+python setup.py install
 pip install git+https://github.com/HabanaAI/DeepSpeed.git@1.17.0
 
 cd examples/text-generation
